@@ -8,10 +8,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Myapp
+module Megatournament
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults '6.0'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -23,6 +22,10 @@ module Myapp
         origins '*'
         resource '*', headers: :any, methods: %i[get post options]
       end
+    end
+
+    config.generators do |g|
+      g.test_framework :rspec, fixture: false
     end
   end
 end

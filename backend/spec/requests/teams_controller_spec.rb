@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe '/teams', type: :request do
+xdescribe '/teams', type: :request do
   describe 'GET /index' do
     it 'renders a successful response' do
       get '/teams'
