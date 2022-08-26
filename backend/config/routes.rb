@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'greetings/hello'
   get '/teams', to: 'teams#index'
