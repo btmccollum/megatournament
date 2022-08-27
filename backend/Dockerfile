@@ -2,6 +2,7 @@ FROM ruby:2.7.1
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 WORKDIR /teamsnap-mega-tournament/backend
 COPY Gemfile* ./
+ENV BUNDLE_PATH /gems
 RUN bundle install
 COPY . /teamsnap-mega-tournament/backend
 
