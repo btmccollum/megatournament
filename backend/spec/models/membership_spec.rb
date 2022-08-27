@@ -8,11 +8,11 @@ describe Membership do
     team
   end
 
-  Membership.roles.each do |role_name, _value|
-    it "can be a #{role_name}" do
+  Membership.roles.each do |role_name, value|
+    it "can have a role of #{role_name}" do
       user
-      expect { team.memberships.create(player: user, role: role_name) }.to change { team.memberships.count }.by(1)
-      expect user.memberships.first.role to eq role_name
+      expect { team.memberships.create(user: user, role: role_name) }.to change { team.memberships.count }.by(1)
+      expect(user.memberships.first.role).to eq(role_name)
     end
   end
 end
