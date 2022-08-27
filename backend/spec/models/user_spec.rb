@@ -15,6 +15,5 @@ describe User do
    it 'requires an email' do
       expect{ User.create(first_name: 'Test', last_name: 'McTestface') }.to raise_error ActiveRecord::NotNullViolation
     end
-
   end
 end
